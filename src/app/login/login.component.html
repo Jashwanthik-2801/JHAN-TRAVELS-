@@ -1,0 +1,88 @@
+<div class="container-fluid bg">
+    <head> <!--Latest compiled and minified CSS--> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width = device-width,initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <style>
+        .logo{
+           padding-left:28%;
+           margin-top:20px;
+        }
+        html{
+         background-size:cover;
+               background-image:url(/home/dell/Downloads/bus1.jpeg);
+               
+               background-attachment:fixed;
+        }
+        .jhan{
+        font-style: fantasy; 
+        }
+        
+        </style>
+     </head>
+  
+    <h1><div style="padding-left:45%;margin-top:-30px">
+      <table>
+      
+      <tr>
+        <td> <span align="right"><i  class="fa fa-bus"style="font-size:80px;color:red" ><font size=100px><b>&nbsp;|</b></font></i>  <font size=100px><b></b></font>  </span></td>
+          <td><font size= 6 background-color= "orange" > <div class="jhan" style="width: 300px;"><br/><br/><b>JHAN TRAVELS</b></div></font><br></td>
+           
+        </tr>
+        </table>
+      </div>
+   </h1>
+     <br/>
+     <div class="row">
+       <div class="column">
+         <img src="assets/images/slogan1.jpg" class="slogan">
+       </div>
+    
+    <div>
+
+        <div class="container-fluid bg">
+         
+            <div class="row">
+              
+              
+                <div class="col-md-4 col-sm-4 col-xs-12"></div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                
+                 
+        <form #loginForm="ngForm" class="form-group" style="color:white" (ngSubmit)=validateUser(loginForm.value) novalidate class="form-conatiner">
+            <h1>Please Login !</h1>
+            <div class="form-group">
+             <div class="input-group">
+              <label for="exampleInputloginId">Enter LoginId :</label>
+              <input type="text"  class ="form-control" name="loginId" ngModel #loginId= "ngModel" id="exampleInputloginId" required minlength="4" placeholder="login id"><br/>
+             </div>
+            </div>
+            <div class="form-group">
+             <div class="input-group">
+               
+               <label for="exampleInputPassword1">Enter Password :</label>
+               <input type="password" class="form-control" name="password" ngModel #password= "ngModel" id="exampleInputPassword1" required minlength="4" placeholder="password"><br/>
+             </div>
+            </div>
+            <button [disabled]="!loginForm.valid" (click)="loginUser()" class="btn" type="submit" style="color:white;background-color: red;">Login</button>
+            <p>No Account ? <i><b (click)="Register()" style="color:blue">Register Here</b></i></p>
+        
+    </form>
+  </div>
+</div>
+    <div *ngIf="loginForm.touched && loginId.errors?.required">please enter the loginId</div>
+    <div *ngIf="loginForm.touched && password.errors?.required">please enter the password</div>
+    <div *ngIf="loginForm.touched && loginId.errors?.minlength">please enter 4 chars</div>
+    <div *ngIf="loginForm.touched && password.errors?.minlength">please enter 4 chars</div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    </div>
+    </div>
+    </div> 
+    

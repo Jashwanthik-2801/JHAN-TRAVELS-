@@ -1,0 +1,133 @@
+<html>
+<head>
+  <title>HC Airline Ticket Reservation System</title>
+  <link href="https://fonts.googleapis.com/css?family=Jockey+One" rel="stylesheet">
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <style>
+  .logo{
+     padding-left:28%;
+     margin-top:20px;
+  }
+  html{
+   background-size:cover;
+         background-image:url(/home/dell/Downloads/bus1.jpeg);
+         
+         background-attachment:fixed;
+  }
+  .jhan{
+  font-style: fantasy; 
+  }
+  
+  </style>
+</head>
+
+<body>
+   <div class="maincontent overlay container-fluid" style="background-image: url('../../assets/images/bg2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+   width: 100%;
+  height: 100%;"> 
+  <div class="w3-top" >
+    <div  style="background-color:transparent;color:rgb(3, 3, 3)">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-left" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu" ><i class="fa fa-bars">hi</i></a>
+      <div *ngIf="logged;else nonuser">
+   <a  class="w3-bar-item w3-button w3-padding-large w3-hide-small"style="margin-left: 1000px;" (click)="passtickets()"><b>MyTickets</b></a> 
+    
+      <div class="w3-dropdown-hover w3-hide-small">
+   <h1>   <button class="w3-padding-large w3-button" title="More"> <i class="fa fa-user" style="color:red;font-size: 40px;"></i></button> </h1>  
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+         
+          <a (click)="logout()" class="w3-bar-item w3-button">Logout</a>
+    
+     
+      </div>
+    </div> 
+  </div>
+  <ng-template #nonuser> <div class="w3-dropdown-hover w3-hide-small" style="margin-left: 1150px;">
+  <h1> <button class="w3-padding-large w3-button" title="More"> <i class="fa fa-user" style="color:red"></i></button>    </h1> 
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a (click)="register()" class="w3-bar-item w3-button">Register</a>
+      <a (click)="login()" class="w3-bar-item w3-button">Login</a>
+
+ 
+  </div>
+
+</div>  </ng-template>
+    </div>
+  </div>
+  
+   <!--  <div class="myHeader">
+      <h1 class="text-center">Choose your Bus</h1>
+      <h2 class="text-center"></h2>
+  
+    </div>  -->
+    <div class="logo">
+      <table>
+      
+      <tr>
+        <td> <span align="right"><i  class="fa fa-bus"style="font-size:80px;color:red" ><font size=100px><b>&nbsp;|</b></font></i>  <font size=100px><b></b></font>  </span></td>
+          <td><font size= 6 background-color= "orange" > <div class="jhan" style="width: 300px;"><br/><br/><b style="color:black">JHAN TRAVELS</b></div></font><br></td>
+           
+        </tr>
+        </table>
+      </div>
+    <br />
+    <br />
+    <div class="row flightHeader">
+      <div class="col-md">
+        <h4 class="text-center"><b>Passenger Id</b></h4>
+      </div>
+      <div class="col-md">
+        <h4 class="text-center"><b>BusNo</b></h4>
+      </div>
+      <div class="col-md">
+        <h4 class="text-center"><b>SeatNo</b></h4>
+      </div>
+      <div class="col-md">
+        <h4 class="text-center"><b>TotalFare</b></h4>
+      </div>
+      <div class="col-md">
+        <h4 class="text-center"><b>Confirmation</b></h4>
+      </div>
+    </div>
+   
+      <div class="allFlights">
+      
+         <div class="row flight 4563" id="4563">
+       
+        <div class="col-md">
+         <b> <h5 class="text-center flno flightNo1"><b>{{passid}}</b></h5></b>
+        </div>
+        <div class="col-md">
+          <b><h5 class="text-center flnm flightNo1"><b>{{busno}}</b></h5></b>
+        </div>
+        <div class="col-md">
+          <b><h5 class="text-center flsrc flightNo1"><b>{{seats}}</b></h5></b>
+        </div>
+       
+        <div class="col-md">
+          <b><h5 class="text-center flprc flightNo1"><b>{{totalfare |currency: 'INR'}}</b></h5></b>
+        </div>
+        <div class="col-md">
+          <b><h5 class="text-center flprc flightNo1"><button (click)="bookticket()"  style="color:white;background-color: red"> Confirm Ticket </button></h5></b>
+        </div>
+      </div>
+     
+
+    </div>
+  <!--   </div> -->

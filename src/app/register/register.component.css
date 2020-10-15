@@ -1,0 +1,34 @@
+
+
+
+    .logo { position: relative; top: -50px; right: -1150px;
+      height:100px;
+      width:150px;
+       }
+    .form-conatiner{
+       margin-left: 40px;
+        padding: 40px  50px;
+        margin-top: 1vh; 
+        width:500px;
+       background-color: rgba(9, 4, 53, 0.7);
+
+       -webkit-box-shadow: -34px -25px 31px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: -34px -25px 31px -4px rgba(0,0,0,0.75);
+  box-shadow: -34px -25px 31px -4px rgba(0,0,0,0.75);
+
+      
+     }
+     .btn {
+        background-color: #4CAF50;
+        
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        width: 39%;
+        opacity: 0.9;
+      }
+      
+      .btn:hover {
+        opacity: 3;
+      }

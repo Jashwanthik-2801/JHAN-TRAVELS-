@@ -1,0 +1,96 @@
+<html>
+<head>  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <link href="https://codepen.io/ahmetcadirci25/pen/GBOwdE">
+<script type="text/javascript">
+
+</script>
+<script src="/assets/js/calender.js">
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.logo{
+   padding-left:28%;
+   margin-top:10px;
+}
+html{
+ background-size:cover;
+       background-image:url(/home/dell/Downloads/bus1.jpeg);
+       
+       background-attachment:fixed;
+}
+.jhan{
+font-style: fantasy; 
+}
+
+</style>
+</head>
+<body>
+
+  <div class="w3-top" >
+    <div  style="background-color:transparent;color:white">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-left" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu" ><i class="fa fa-bars">hi</i></a>
+      <div *ngIf="logged;else nonuser">
+   <a  class="w3-bar-item w3-button w3-padding-large w3-hide-small"style="margin-left: 1150px;" (click)="passtickets()">MyTickets</a> 
+  
+      <div class="w3-dropdown-hover w3-hide-small">
+   <h1>   <button class="w3-padding-large w3-button" title="More"> <i class="fa fa-user" style="color:red"></i></button> </h1>  
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+         
+          <a (click)="logout()" class="w3-bar-item w3-button">Logout</a>
+    
+     
+      </div>
+    </div> 
+  </div><br/>
+  <ng-template #nonuser> <div class="w3-dropdown-hover w3-hide-small" style="margin-left: 1250px;"><br/>
+  <h1> <button class="w3-padding-large w3-button" title="More"> <i class="fa fa-user" style="color:red"></i></button>    </h1> 
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a (click)="register()" class="w3-bar-item w3-button">Register</a>
+      <a (click)="login()" class="w3-bar-item w3-button">Login</a>
+
+ 
+  </div>
+
+</div>  </ng-template>
+    </div>
+  </div>
+<div class="bg-img"><br/>
+  <div class="logo">
+    <table>
+    
+    <tr>
+      <td> <span align="right"><i  class="fa fa-bus"style="font-size:80px;color:red" ><font size=100px><b>&nbsp;|</b></font></i>  <font size=100px><b></b></font>  </span></td>
+        <td><font size= 6 background-color= "orange" > <div class="jhan" style="width: 300px;"><br/><br/><b>JHAN TRAVELS</b></div></font><br></td>
+         
+      </tr>
+      </table>
+    </div>
+ 
+  <!-- <img src="assets/images/profile.png" style="width: 100px; float: right;"> -->
+  <form #busForm="ngForm" class="form-group" action="/action_page.php" class="container" (ngSubmit)=getbuseslist(busForm.value)>
+      
+    
+      <label for="text" style="color: #fff;" >Source</label>
+      <input type="text" class ="form-control" name="source" ngModel placeholder="Enter Source" required>
+  
+      <label for="text" style="color: #fff;">Destination</label>
+      <input type="text" class ="form-control" name="destination" ngModel placeholder="Enter Destination" required>
+      
+      <label for="date" style="color: #fff;" >DOJ</label>
+      <input type="date"  id="today1" min="2020-09-29" class ="form-control" name="today1" ngModel placeholder="Enter Journey Date" required>
+      
+      <br/>
+      
+      <button type="text" class="btn" (click)=search(busForm.value) >Search Buses</button>
+      
+    </form>
+  </div>

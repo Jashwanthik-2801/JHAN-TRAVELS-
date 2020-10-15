@@ -1,0 +1,55 @@
+ 
+  * {
+    box-sizing: border-box;
+  }
+  
+  .bg-img {
+    /* The image used */
+    background-image: url("/assets/images/busf7.jpeg");
+  
+    /* Control the height of the image */
+    min-height: 630px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+     width: 100%;
+    height: 100vh;
+    
+  }
+  
+  /* Add styles to the form container */
+  .container {
+    position: absolute;
+    right: 120px;
+    top:150px;
+    
+    margin: 20px;
+    max-width: 400px;
+    max-height: 400px;
+    padding: 16px;
+    background-color: rgba(35, 38, 77, 0.75);
+
+    -webkit-box-shadow: -34px -25px 31px -4px rgba(61, 40, 9, 0.75);
+    -moz-box-shadow: -34px -25px 31px -4px   rgba(61, 40, 9, 0.75);
+    box-shadow: -34px -25px 31px -4px   rgba(61, 40, 9, 0.75);
+  
+  }
+  
+  .btn {
+    background-color:red;
+    
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    width: 39%;
+    opacity: 0.9;
+  }
+  
+  .btn:hover {
+    opacity: 3;
+  }
+  .logo { position: relative; top: -70px; right: -150px;
+    height:100px;
+    width:150px;
+     }

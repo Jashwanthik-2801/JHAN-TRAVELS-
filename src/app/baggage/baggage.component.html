@@ -1,0 +1,187 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+    .logo{
+       padding-left:28%;
+       margin-top:20px;
+    }
+    html{
+     background-size:cover;
+           background-image:url(/home/dell/Downloads/bus1.jpeg);
+           
+           background-attachment:fixed;
+    }
+    .jhan{
+    font-style: fantasy; 
+    }
+    
+    </style>
+</head>
+  <body>
+    <div class="w3-top" >
+        <div  style="background-color:transparent;color:white"><br/><br/>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-left" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu" ><i class="fa fa-bars">hi</i></a>
+          <div *ngIf="logged;else nonuser">
+       <a  class="w3-bar-item w3-button w3-padding-large w3-hide-small"style="margin-left: 1150px;" (click)="passtickets()"><b>MyTickets</b></a> 
+  
+          <div class="w3-dropdown-hover w3-hide-small">
+       <h1>   <button class="w3-padding-large w3-button" title="More"> <i class="fa fa-user" style="color:red"></i></button> </h1>  
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+             
+              <a (click)="logout()" class="w3-bar-item w3-button">Logout</a>
+        
+         
+          </div>
+        </div> 
+      </div>
+      <ng-template #nonuser> <div class="w3-dropdown-hover w3-hide-small" style="margin-left: 1250px;">
+      <h1> <button class="w3-padding-large w3-button" title="More"> <i class="fa fa-user" style="color:red"></i></button>    </h1> 
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a (click)="register()" class="w3-bar-item w3-button">Register</a>
+          <a (click)="login()" class="w3-bar-item w3-button">Login</a>
+    
+     
+      </div>
+    
+    </div>  </ng-template>
+        </div>
+      </div>
+    <div class="bag">
+      <h1><div style="padding-left:45%;margin-top:10px">
+        <table>
+        
+        <tr>
+          <td> <span align="right"><i  class="fa fa-bus"style="font-size:80px;color:red" ><font size=100px><b>&nbsp;|</b></font></i>  <font size=100px><b></b></font>  </span></td>
+            <td><font size= 6 background-color= "orange" > <div class="jhan" style="width: 300px;"><br/><br/><b>JHAN TRAVELS</b></div></font><br></td>
+             
+          </tr>
+          </table>
+        </div>
+     </h1>
+      <h4 style="color:black;text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i> Our unique feature “Baggage”
+         allows  you to export only the baggage to the
+        respective destination.</i></h4><br/><br/>
+    <div class="container-fluid bg">
+        <div class="row">
+            
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+             
+    <form #baggageForm="ngForm" class="form-conatiner" (ngSubmit)="addBaggage(baggageForm.value)" style="color:white" nonvalidate >
+        <h1 >Baggage Details</h1>
+
+
+        <div class="form-group" >
+            <label for="exampleInputsource">Enter Source:</label>
+            <input type ="text"  class="form-control" name="source" ngModel #source ="ngModel" id="exampleInputsource" placeholder="source" required minlength="4"  maxlength="20" required >
+            <div class="text-danger"  align="left">
+            <div *ngIf="source.invalid && (baggageForm.submitted || source.touched)"> 
+            <div *ngIf="source.touched && source.errors?.required">Enter Your Source</div>
+            </div>
+            </div>
+        </div>
+
+
+    <div class="form-group" >
+        <label for="exampleInputdestination">Enter Destination :</label>
+        <input type = "text" class="form-control" name="destination" ngModel  #destination ="ngModel" id="exampleInputdestination" placeholder="destination" required minlength="4"  maxlength="10" required>
+        <div class="text-danger"  align="left">
+            <div *ngIf="destination.invalid && (baggageForm.submitted || destination.touched)"> 
+            <div *ngIf="destination.touched && destination.errors?.required">Enter Destination</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group" >
+        <label for="exampleInputtypeofgoods">Enter Type Of Goods:</label>
+        <input type ="text"  class="form-control" name="typeOfGoods" ngModel #typeOfGoods ="ngModel" id="exampleInputtypeofgoods" placeholder="Type Of Goods" required minlength="4"  maxlength="20" required >
+        <div class="text-danger"  align="left">
+        <div *ngIf="typeOfGoods.invalid && (baggageForm.submitted || typeOfGoods.touched)"> 
+        <div *ngIf="typeOfGoods.touched && typeOfGoods.errors?.required">Enter type Of Goods</div>
+        </div>
+        </div>
+    </div>
+
+
+   
+
+
+        <div class="form-group" [class.has-error]="senderMailId.invalid && senderMailId.touched" align="left">
+            <label for="senderMailId" class="control-label">Enter SenderEmail :</label>
+            <input id = "senderMailId"  type = "text" class="form-control" name="senderMailId" ngModel #senderMailId = "ngModel" placeholder ="senderMailId" required minlength="4"  maxlength="40" required>
+            <div *ngIf="senderMailId.invalid && (baggageForm.submitted || senderMailId.touched)"> 
+            <span class = "help-block" *ngIf="senderMailId.touched && senderMailId.errors?.required">Email is required</span>
+            <span class = "help-block" *ngIf="senderMailId.errors?.senderMailId && senderMailId.touched">Email is invalid</span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleInputmobile">Enter Reciever Mobile Number : </label>
+        <input type = "text" class="form-control" name="recieverMobileNo" ngModel #recieverMobileNo = "ngModel" id="exampleInputmobile" placeholder="Reciever MobileNo" required minlength="4"  maxlength="10" required>
+        <div class="text-danger"  align="left">
+            <div *ngIf="recieverMobileNo.invalid && (baggageForm.submitted || recieverMobileNo.touched)"> 
+            <div *ngIf="recieverMobileNo.touched && recieverMobileNo.errors?.required">Enter valid Reciever MobileNo</div>
+            </div>
+        </div>
+        </div>
+
+        
+        <div class="form-group"  [class.has-error]="recieverMailId.invalid && recieverMailId.touched" align="left">
+            <label for="recieverMailId" class="control-label">Enter RecieverEmail :</label>
+            <input id = "recieverMailId"  type = "text" class="form-control" name="recieverMailId" ngModel #recieverMailId = "ngModel" placeholder ="recieverMailId" required minlength="4"  maxlength="40" required>
+            <div *ngIf="recieverMailId.invalid && (baggageForm.submitted || recieverMailId.touched)"> 
+            <span class = "help-block" *ngIf="recieverMailId.touched && recieverMailId.errors?.required">Email is required</span>
+            <span class = "help-block" *ngIf="recieverMailId.errors?.recieverMailId && recieverMailId.touched">Email is invalid</span>
+            </div>
+        </div>
+
+
+        <div class="form-group" >
+            <label for="exampleInputdate">Enter Date :</label>
+            <input type = "date" class="form-control" name="date" ngModel #date="ngModel" id="exampleInputdate" placeholder="date" required minlength="1"  maxlength="2" required>
+            <div class="text-danger"  align="left">
+                <div *ngIf="date.invalid && (baggageForm.submitted || date.touched)"> 
+                <div *ngIf="date.touched && date.errors?.required">Enter Date</div>
+                </div>
+            </div>
+        </div>
+    
+
+        
+        
+        <div class="form-group" >
+            <label for="exampleInputquantity">Enter Quantity:</label>
+            <input type ="number"  class="form-control" name="quantity" ngModel #quantity ="ngModel" id="exampleInputquantity" placeholder="Quantity" required minlength="4"  maxlength="20" required >
+            <div class="text-danger"  align="left">
+            <div *ngIf="quantity.invalid && (baggageForm.submitted || quantity.touched)"> 
+            <div *ngIf="quantity.touched && quantity.errors?.required">Enter Quantity</div>
+                </div>
+                </div>
+            </div>
+            
+    
+     
+
+
+
+
+     <button  (click)= "submit()" class="btn" style="background-color:red">Submit Request</button>
+
+</form>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-12"></div>
+</div>
+    
+  </div> 
+</div>
+  </body>
+</html> 

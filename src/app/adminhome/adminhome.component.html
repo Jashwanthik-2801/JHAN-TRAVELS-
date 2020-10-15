@@ -1,0 +1,59 @@
+<div class="container-fluid bg">
+    <head> <!--Latest compiled and minified CSS--> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width = device-width,initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
+     </head>
+     <div class="w3-top" >
+        <div  style="background-color:transparent;color:black">
+            <br/><br/>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-left" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu" ><i class="fa fa-bars">hi</i></a>
+
+          <div class="w3-dropdown-hover w3-hide-small"style="margin-left:1240px;font-size:40px;">
+            <button class="w3-padding-large w3-button" title="More" > <i class="fa fa-user" style="color:red"></i></button>   
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+             
+              <a (click)="logout()" class="w3-bar-item w3-button" style="font-size:15px">Logout</a>
+        
+         
+       
+        </div> 
+      </div>
+    
+        </div>
+      </div>
+     
+        <h1><div style="padding-left:37%;margin-top:-20px">
+            <table>
+            
+            <tr>
+              <td> <span align="right"><i  class="fa fa-bus"style="font-size:80px;color:red" ><font size=100px><b>&nbsp;|</b></font></i>  <font size=100px><b></b></font>  </span></td>
+                <td><font size= 6 background-color= "orange" > <div class="jhan" style="width: 300px;"><br/><br/><b style="color:black">JHAN TRAVELS</b></div></font><br></td>
+                 
+              </tr>
+              </table>
+            </div>
+         </h1>
+        <div class="row">
+           
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <form class="form-conatiner">
+                    <h1>Admin Controls</h1><br/>
+
+                    <div class="form-group">
+                       
+                     <button type="button" class="btn btn-lg btn-primary" (click)="addbus()">ADD BUS</button>
+                    </div>
+                    <div class="form-group">
+<button type="button" class="btn btn-lg btn-primary" (click)="getbuslist()">BUS LIST</button>
+</div>
+<div class="form-group">
+<button type="button" class="btn btn-lg btn-primary" (click)="getbaggagelist()">Baggage List</button></div>
+
+</form>
+

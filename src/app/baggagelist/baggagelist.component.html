@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
+  <style>
+    .glyphicon-ok{
+      color:chartreuse;
+    }
+  </style>
+</head>
+
+<body>
+  
+    <div class="container-fluid bg">
+      <div class="w3-top" >
+        <div  style="background-color:transparent;color:black">
+            <br/><br/>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-left" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu" ><i class="fa fa-bars">hi</i></a>
+    
+          <div class="w3-dropdown-hover w3-hide-small"style="margin-left:1210px;font-size:30px;">
+            <button class="w3-padding-large w3-button" title="More" > <i class="fa fa-user" style="color:red"></i></button>   
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+             
+              <a (click)="logout()" class="w3-bar-item w3-button" style="font-size:15px">Logout</a>
+        
+         
+       
+        </div> 
+      </div>
+    
+        </div>
+      </div>
+      <h1><div style="padding-left:37%;margin-top:-20px">
+        <table>
+        
+        <tr>
+          <td> <span align="right"><i  class="fa fa-bus"style="font-size:80px;color:red" ><font size=100px><b>&nbsp;|</b></font></i>  <font size=100px><b></b></font>  </span></td>
+            <td><font size= 6 background-color= "orange" > <div class="jhan" style="width: 300px;"><br/><br/><b style="color:black">JHAN TRAVELS</b></div></font><br></td>
+             
+          </tr>
+          </table>
+        </div>
+     </h1>
+<br/><br/><br/>
+<table border=2 align='center' class="table" style="width:80%">
+    <thead class="thead-dark">
+    <tr>
+        <th>PassengerId</th>
+        <th>Source</th>
+        <th>Destination</th>
+        <th>Date</th>
+        <th>Type Of Goods</th>
+        <th>Quantity</th>
+         <th>Approve</th> 
+         <th>Disapprove</th>
+     
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let b of baggage">
+        <td>{{b.passenger.passId}}</td>
+        <td>{{b.source }}</td>
+        <td>{{b.destination }}</td>
+        <td>{{b.date}}</td>
+        <td>{{b.typeOfGoods}}</td>
+        <td>{{b.quantity}}</td>
+        
+       
+
+        
+        <td align="center"><button id= "btn" (click)="approvereq(b)" > Approve</button></td>
+        <td align="center"><button id=" btn" (click)="deletereq(b)" > Disapprove</button></td>
+    
+    </tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

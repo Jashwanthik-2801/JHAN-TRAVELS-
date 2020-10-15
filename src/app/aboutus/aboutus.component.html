@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color:rgba(35, 38, 77, 0.75);
+  color: white;
+}
+.row {
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  padding: 5px;
+  
+}
+</style>
+</head>
+<body>
+  <div class="w3-top" ><br/>
+    <div  style="background-color:transparent;color:white">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-left" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu" ><i class="fa fa-bars">hi</i></a>
+      <div *ngIf="logged;else nonuser">
+   <a  class="w3-bar-item w3-button w3-padding-large w3-hide-small"style="margin-left: 1000px;" (click)="passtickets()">MyTickets</a> 
+    
+      <div class="w3-dropdown-hover w3-hide-small">
+   <h1>   <button class="w3-padding-large w3-button" title="More"> <i class="fa fa-user" style="color:red"></i></button> </h1>  
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+         
+          <a (click)="logout()" class="w3-bar-item w3-button">Logout</a>
+    
+     
+      </div>
+    </div> 
+  </div><br/>
+  <ng-template #nonuser> <div class="w3-dropdown-hover w3-hide-small" style="margin-left: 1100px;">
+  <h1> <button class="w3-padding-large w3-button" title="More"> <i class="fa fa-user" style="color:red"></i></button>    </h1> 
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a (click)="register()" class="w3-bar-item w3-button">Register</a>
+      <a (click)="login()" class="w3-bar-item w3-button">Login</a>
+
+ 
+  </div>
+
+</div>  </ng-template>
+    </div>
+  </div>
+  
+  
+<div class="about-section">
+  <h1><div style="padding-left:30%;margin-top:-80px">
+    <table>
+    
+    <tr>
+      <td> <span align="right"><i  class="fa fa-bus"style="font-size:80px;color:red" ><font size=100px><b>&nbsp;|</b></font></i>  <font size=100px><b></b></font>  </span></td>
+        <td><font size= 6 background-color= "orange" > <div class="jhan" style="width: 300px;"><br/><br/><b style="color:black">JHAN TRAVELS</b></div></font><br></td>
+         
+      </tr>
+      </table>
+    </div>
+ </h1>
+  <h1>About Us</h1>
+  <p><b>JHAN TRAVELS</b> is an online bus seat reservation website.This
+website enables the users to look for the buses by entering the
+source, destination and date of journey.He/She can then choose a
+bus of his/her choice .In order to book the seats the user must
+complete the registration process .Then they can select the seats in
+their selected bus.Once booking is done a conformation mail is
+sent to the user.The user can view their tickets and can cancel
+them if required.Also provided a unique feature “Baggage”
+which allows the user to export only the baggage to the
+respective destination.</p>
+<br>
+<h4>For any queries you can reach out to any of us :</h4>
+</div>
+
+<div class="row">
+  <div class="column">
+    <img src="/assets/images/jashwanthi.jpg" alt="Snow" style="width:100%;height:300px">
+   <font size="10">&nbsp;&nbsp;J</font><font size="5">ashwanthi</font>
+
+
+   &nbsp;&nbsp;jashwanthik@gmail.com<br/>
+   &nbsp;&nbsp;Contact No : 6303797460
+  </div>
+  <div class="column">
+    <img src="/assets/images/Harshita.jpg" alt="Forest" style="width:100%;height:300px">
+    <font size="10">&nbsp;&nbsp;H</font><font size="5">arshitha</font>
+
+
+saiharshita999@gmail.com<br/>
+Contact No : 9676921116
+
+
+  </div>
+  <div class="column">
+    <img src="/assets/images/amulya.jpg" alt="Mountains" style="width:100%;height:300px">
+ 
+    <font size="10">&nbsp;&nbsp;A</font><font size="5">mulya</font>
+vempatiamulya@gmail.com<br/>
+Contact No : 8688945139
+  </div>
+  <div class="column">
+    <img src="/assets/images/nikhitha.jpg" alt="Snow" style="width:100%;height:300px">
+     <font size="10">&nbsp;&nbsp;N</font><font size="5">ikhitha</font>
+
+
+
+veginikhitha@gmail.com<br/>
+Contact No : 9121424704
+  </div>
+</div>
+
+</body>
+</html>

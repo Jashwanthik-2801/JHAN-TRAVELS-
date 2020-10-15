@@ -1,0 +1,13 @@
+body, html {
+  height: 100%;
+}
+header{
+  opacity: 1.0;
+  
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

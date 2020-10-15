@@ -1,0 +1,47 @@
+<html>
+<div class="container-fluid bg">
+    <div class="w3-top" >
+        <div  style="background-color:transparent;color:black">
+            <br/><br/>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-left" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu" ><i class="fa fa-bars">hi</i></a>
+
+          <div class="w3-dropdown-hover w3-hide-small"style="margin-left:1240px;font-size:40px;">
+            <button class="w3-padding-large w3-button" title="More" > <i class="fa fa-user" style="color:red"></i></button>   
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+             
+              <a (click)="logout()" class="w3-bar-item w3-button" style="font-size:15px">Logout</a>
+        
+         
+       
+        </div> 
+      </div>
+    
+        </div>
+      </div>
+    <h1><div style="padding-left:40%;margin-top:-20px">
+        <table>
+        
+        <tr>
+          <td> <span align="right"><i  class="fa fa-bus"style="font-size:80px;color:red" ><font size=100px><b>&nbsp;|</b></font></i>  <font size=100px><b></b></font>  </span></td>
+            <td><font size= 6 background-color= "orange" > <div class="jhan" style="width: 300px;"><br/><br/><b>JHAN TRAVELS</b></div></font><br></td>
+             
+          </tr>
+          </table>
+        </div>
+     </h1>
+<div class="card text-center" style="width:700px;margin-left:300px"> 
+    
+    <div class="card-header " style="background-color:red;opacity:0.9" ><b> My Tickets</b> </div> 
+    <div class="card-body" *ngFor= "let s of seat"> 
+        <h5 class="card-title">TicketNo : {{s.ticket.ticketNo}}<br/>SeatNo : {{s.seatNo}}<br/>Boarding Point : {{s.bus.boardingPt}}<br/>Destination : {{s.bus.destination}}<br/>Date of Journey : {{s.ticket.dateOfJourney}}</h5>
+      
+         
+        
+         <hr style="color:brown">
+       
+         </div>
+         <button (click)="cancelticket()">Cancel Ticket</button>
+        
+</div> 
+</div>
+</html>

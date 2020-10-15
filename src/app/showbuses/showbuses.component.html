@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
+  <style>
+    .glyphicon-ok{
+      color:chartreuse;
+    }
+  </style>
+</head>
+
+<div class="container" >
+    <div class="modal fade" id="busModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <h4 class="modal-title">update</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        Enter BusNo: <input type="number"  name="busNo" [(ngModel)] ="editObject.busNo" class ="form-control"><br/>
+                        Enter BusType: <input type="text"  name="busType" [(ngModel)] ="editObject.busType" class ="form-control"><br/>
+                        Enter Timings:<input type="text"  name="timings" [(ngModel)] ="editObject.timings" class ="form-control"><br/>
+                        Enter BoardingPoint:<input type="text"  name="boardingPt" [(ngModel)] ="editObject.boardingPt" class ="form-control"><br/>
+                        Enter Destination: <input type="text" name="destination" [(ngModel)] ="editObject.destination" class ="form-control"><br/>
+                        Enter SeatsAvailable No: <input type="number"  name="seatsAvail"  [(ngModel)] ="editObject.seatsAvail" class ="form-control"><br/>
+                        Enter Price per Seat: <input type="number"  name="price"  [(ngModel)] ="editObject.price" class ="form-control"><br/>
+                        Enter Bus Code: <input type="text"  name="busCode"  [(ngModel)] ="editObject.busCode" class ="form-control"><br/>
+                        
+                    </form>
+                  
+                </div>
+                <div class="modal-footer">
+    
+                    <button class="btn btn-primary btn-sm" (click)="updateBus()" data-dismiss="modal">Update</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <body>
+        <div class="w3-top" >
+            <div  style="background-color:transparent;color:black">
+                <br/><br/>
+              <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-left" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu" ><i class="fa fa-bars">hi</i></a>
+    
+              <div class="w3-dropdown-hover w3-hide-small"style="margin-left:1110px;font-size:30px;">
+                <button class="w3-padding-large w3-button" title="More" > <i class="fa fa-user" style="color:red"></i></button>   
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                 
+                  <a (click)="logout()" class="w3-bar-item w3-button" style="font-size:15px">Logout</a>
+            
+             
+           
+            </div> 
+          </div>
+        
+            </div>
+          </div>
+          <h1><div style="padding-left:37%;margin-top:-20px">
+            <table>
+            
+            <tr>
+              <td> <span align="right"><i  class="fa fa-bus"style="font-size:80px;color:red" ><font size=100px><b>&nbsp;|</b></font></i>  <font size=100px><b></b></font>  </span></td>
+                <td><font size= 6 background-color= "orange" > <div class="jhan" style="width: 300px;"><br/><br/><b style="color:black">JHAN TRAVELS</b></div></font><br></td>
+                 
+              </tr>
+              </table>
+            </div>
+         </h1>
+        <div class="container">
+
+<br/><br/><br/>
+<table border=2 align='center' class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>BusNo</th>
+        <th>BusType</th>
+        <th>Timings</th>
+        <th>BoardingPoint</th>
+        <th>Destination</th>
+        <th>SeatsAvailable</th>
+        <th>Price per Seat</th>
+        <th>Bus Code</th>
+        <th>Edit</th>       
+     
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let bus of Bus">
+        <td>{{bus.busNo }}</td>
+        <td>{{bus.busType }}</td>
+        <td>{{bus.timings}}  </td>
+        <td>{{bus.boardingPt}}</td>
+        <td>{{bus.destination}}</td>
+        <td>{{bus.seatsAvail}}</td>
+        <td>{{bus.price|currency: 'INR'}}</td>
+        <td>{{bus.busCode}}</td>
+       
+
+        
+        <td align="center"><button (click)="showEditPopup(bus)" class="glyphicon glyphicon-pencil"></button></td>
+    
+    </tr>
+</tbody>
+</table>
+</div>
+</body>
+</div></html>

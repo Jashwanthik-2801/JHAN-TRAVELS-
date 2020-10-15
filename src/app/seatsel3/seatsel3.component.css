@@ -1,0 +1,61 @@
+
+
+.table>.fixed-column {
+    position: absolute;
+    display: inline-block;
+    width: auto;
+    border-right: 1px solid #ddd;
+    border: 4px double rgb(14, 11, 11);
+}
+
+.td th {
+    width: 31px;
+}
+
+.tdBox {
+    display: inline-block; 
+    width: 26px;
+    height: 23px;
+    padding: 1px 3px; 
+    border: 4px double white;
+    background-color:#ddd;
+    opacity: 0.4;
+}
+
+.spanBox {
+    display: inline-block; 
+    width: 28px;
+    height: 23px;
+    padding: 1px 3px; 
+    border: 4px double white;
+    background-color:#ddd;
+    margin-top: 2%;
+}
+
+.seatsBtn {
+    margin-top: 1%;
+}
+
+.input {
+    width: 14%;
+    position: relative;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+.greenColor{
+    color: #5cb85c;
+}
+.redColor{
+    color: #d9534f;
+}
+
+
+.resultTable td:nth-child(3){
+    max-width:100%;
+    word-break: break-all;
+}
+.logo { position: relative; top: -60px; right: 450px;
+    height:100px;
+    width:150px;
+     }

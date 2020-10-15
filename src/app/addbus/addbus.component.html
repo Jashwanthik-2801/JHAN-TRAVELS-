@@ -1,0 +1,84 @@
+<html>
+<div class="container-fluid bg">
+  <head> <!--Latest compiled and minified CSS--> 
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width = device-width,initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+   </head>
+   <div class="w3-top" >
+    <div  style="background-color:transparent;color:black">
+
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-left" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu" ><i class="fa fa-bars">hi</i></a>
+
+      <div class="w3-dropdown-hover w3-hide-small"style="margin-left:1240px;font-size:40px;">
+        <button class="w3-padding-large w3-button" title="More" > <i class="fa fa-user" style="color:red"></i></button>   
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+         
+          <a (click)="logout()" class="w3-bar-item w3-button" style="font-size:15px">Logout</a>
+    
+     
+   
+    </div> 
+  </div>
+
+    </div>
+  </div>
+  
+  <h1><div style="padding-left:37%;margin-top:-20px">
+    <table>
+    
+    <tr>
+      <td> <span align="right"><i  class="fa fa-bus"style="font-size:80px;color:red" ><font size=100px><b>&nbsp;|</b></font></i>  <font size=100px><b></b></font>  </span></td>
+        <td><font size= 6 background-color= "orange" > <div class="jhan" style="width: 300px;"><br/><br/><b style="color:black">JHAN TRAVELS</b></div></font><br></td>
+         
+      </tr>
+      </table>
+    </div>
+ </h1>
+  
+      <div class="container-fluid bg">
+          <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12"></div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+               
+     <form #registerForm="ngForm" class="form-conatiner" (ngSubmit)="registerBus(registerForm.value)">
+     
+      
+    <div class="form-group">
+     <select   name="busType" ngModel class ="form-control" required>
+        <option value="" disabled selected>Bus Type</option>
+        <option  style="color:black" value ="AC">AC</option>
+          <option  style="color:black"  value ="NON-AC">NON-AC</option>
+         
+     </select>
+
+    </div>
+     
+     <div class="form-group">
+     <input type="text" class ="form-control" name="timings" ngModel required minlength="4" placeholder="Timings">
+    </div>
+
+     <div class="form-group">
+     <input type="text" class ="form-control" name="boardingPt" ngModel  required minlength="4" placeholder="Boarding Point">
+    </div>
+
+     <div class="form-group">
+     <input type="text" class ="form-control" name="destination" ngModel  required minlength="4" placeholder="Destination">
+    </div>
+
+     <div class="form-group">
+     <input type="number" class ="form-control" name="seatsAvail" ngModel  required minlength="4" placeholder="Seats Available">
+    </div>
+    <div class="form-group">
+        <input type="text" class ="form-control" name="busCode" ngModel  required minlength="4" placeholder="Bus Code">
+       </div>
+       <div class="form-group">
+        <input type="number" class ="form-control" name="price" ngModel   placeholder="Price per Seat">
+       </div>
+   <button  class="btn btn-info">Add Bus</button>
+</form>
+

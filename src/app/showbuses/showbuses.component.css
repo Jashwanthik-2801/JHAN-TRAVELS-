@@ -1,0 +1,14 @@
+.table{
+    background-color: aliceblue;
+}
+body{
+
+    background-image: url('../../assets/images/bg2.jpg');
+    background-position: center;
+   background-size: cover;
+    background-repeat: no-repeat;
+   width: 200vh;
+    height: 100vh; 
+    
+    
+    } 
